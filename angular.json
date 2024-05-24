@@ -99,6 +99,39 @@
           }
         }
       }
+    },
+    "ang2-signature-pad": {
+      "projectType": "library",
+      "root": "projects/ang2-signature-pad",
+      "sourceRoot": "projects/ang2-signature-pad/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ang2-signature-pad/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ang2-signature-pad/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ang2-signature-pad/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ang2-signature-pad/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
